@@ -1,0 +1,17 @@
+{
+    "luau-lsp.types.roblox": false,
+    "luau-lsp.sourcemap.enabled": false,
+
+    "files.exclude": {
+        ".vscode": true
+    },
+
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "README.md": "LICENSE",
+
+        "aftman.toml": "wally.toml, selene.toml",
+        "wally.toml": "wally.lock"
+    }
+}

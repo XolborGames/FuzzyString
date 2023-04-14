@@ -1,0 +1,26 @@
+[package]
+version = "1.0.0"
+license = "MPL-2.0"
+name = "xolborgames/dameraulevenshtein"
+description = """
+Lua implementations of the Levenshtein algorithm for Roblox.
+
+Includes:
+* Levenshtein
+* Damerau Levenshtein
+"""
+
+realm = "shared"
+exclude = [
+    ".gitignore",
+    ".vscode",
+    "aftman.toml",
+    "selene.toml"
+]
+include = [
+    "init.lua"
+]
+
+registry = "https://github.com/UpliftGames/wally-index"
+
+[dependencies]
