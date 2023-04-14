@@ -81,19 +81,20 @@ function fuzzy.damerauLevenshtein(s: string, t: string): number
 
     -- initialize v0 so that each value is its index (-1 because lua)
     -- so that it is the edit distance from an empty s to t
-    for i,_ in v0 do
-        v0[i] = i -1
+    for i = 1, n do
+        vn[i] = i - 1
+        v0[i] = i - 1
     end
 
 
     for i = 1, m do
-        v1[1] = i-1
+        v1[1] = i - 1
 
         for j = 1, n do
             local cost = if s:sub(i, i) == t:sub(j, j) then 0 else 1
 
             -- check whether this and previous character can be switched
-            if i > 2 and j > 2 and s:sub(i, i) == t:sub(j-1, j-1) and s:sub(i-1, i-1) == t:sub(j, j) then
+            if i > 1 and j > 1 and s:sub(i, i) == t:sub(j-1, j-1) and s:sub(i-1, i-1) == t:sub(j, j) then
                 local noChangeCost = v1[j + 1]
                 local transpositionCost = vn[j - 1] + 1
 
