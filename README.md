@@ -1,9 +1,5 @@
 # Levenshtein and other algorithms for Roblox
 
-## API
-
-TODO
-
 ## Installation
 Add to your project by adding it to your `wally.toml` and running `wally install`
 ```toml
