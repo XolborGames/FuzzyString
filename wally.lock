@@ -3,6 +3,6 @@
 registry = "test"
 
 [[package]]
-name = "xolborgames/dameraulevenshtein"
-version = "0.1.0"
+name = "xolborgames/fuzzy-string"
+version = "1.0.0"
 dependencies = []

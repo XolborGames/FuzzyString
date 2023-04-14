@@ -1,10 +1,14 @@
-# Levenshtein and other algorithms for Roblox
+# Fuzzy string algorithms for Roblox
+
+[Wikipedia](https://en.wikipedia.org/wiki/Approximate_string_matching)
+
+<br />
 
 ## Installation
 Add to your project by adding it to your `wally.toml` and running `wally install`
 ```toml
 [dependencies]
-levenshtein = "xolborgames/levenshtein@1.0.0"
+fuzzy = "xolborgames/fuzzy-string@1.0.0"
 ```
 
 ## Building

@@ -1,9 +1,9 @@
 [package]
 version = "1.0.0"
 license = "MPL-2.0"
-name = "xolborgames/dameraulevenshtein"
+name = "xolborgames/fuzzy-string"
 description = """
-Lua implementations of the Levenshtein algorithm for Roblox.
+Fuzzy string algorithms for Roblox.
 
 Includes:
 * Levenshtein
@@ -12,8 +12,11 @@ Includes:
 
 realm = "shared"
 exclude = [
-    ".gitignore",
     ".vscode",
+    ".github",
+
+    ".gitignore",
+
     "aftman.toml",
     "selene.toml"
 ]

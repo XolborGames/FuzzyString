@@ -1,5 +1,5 @@
 --!strict
-local module = {}
+local fuzzy = {}
 
 --[[
     [Wikipedia: Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
@@ -8,7 +8,7 @@ local module = {}
     @param t the string to measure to
     @return the amount of changes are needed to change `s` to `t`
 ]]
-function module.levenshtein(s: string, t: string): number
+function fuzzy.levenshtein(s: string, t: string): number
     -- switch s and t if s is longer than t
     if #s > #t then
         t,s = s,t
@@ -57,8 +57,8 @@ end
     @param t the string to measure to
     @return percentage of `s` that needs to change to convert it to `t` (0-1)
 ]]
-function module.weightedLevenshtein(s: string, t: string): number
-    return module.levenshtein(s, t) / (#s + #t)
+function fuzzy.weightedLevenshtein(s: string, t: string): number
+    return fuzzy.levenshtein(s, t) / (#s + #t)
 end
 
 
@@ -69,7 +69,7 @@ end
     @param t the string to measure to
     @return the amount of changes are needed to change `s` to `t`
 ]]
-function module.damerauLevenshtein(s: string, t: string): number
+function fuzzy.damerauLevenshtein(s: string, t: string): number
     -- switch s and t if s is longer than t
     if #s > #t then
         t,s = s,t
@@ -118,7 +118,7 @@ function module.damerauLevenshtein(s: string, t: string): number
         vn, v0, v1 = v0, v1, vn
     end
 
-    return v0[n + 1];
+    return v0[n + 1]
 end
 
 --[[
@@ -130,8 +130,8 @@ end
     @param t the string to measure to
     @return percentage of `s` that needs to change to convert it to `t` (0-1)
 ]]
-function module.weightedDamerauLevenshtein(s: string, t: string): number
-    return module.damerauLevenshtein(s, t) / (#s + #t)
+function fuzzy.weightedDamerauLevenshtein(s: string, t: string): number
+    return fuzzy.damerauLevenshtein(s, t) / (#s + #t)
 end
 
-return module
+return fuzzy
