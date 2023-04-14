@@ -77,14 +77,16 @@ function fuzzy.damerauLevenshtein(s: string, t: string): number
 
     local m, n = #s, #t
 
-    local vn, v0, v1 = table.create(n + 1, 0), table.create(n + 1, 0), table.create(n + 1, 0)
 
-    -- initialize v0 so that each value is its index (-1 because lua)
+    local vn = table.create(n + 1, 0)
+
+    -- initialize vn so that each value is its index (-1 because lua)
     -- so that it is the edit distance from an empty s to t
-    for i = 1, n do
+    for i = 1, n + 1 do
         vn[i] = i - 1
-        v0[i] = i - 1
     end
+
+    local v0, v1 = table.clone(vn), table.clone(vn)
 
 
     for i = 1, m do
@@ -134,5 +136,6 @@ end
 function fuzzy.weightedDamerauLevenshtein(s: string, t: string): number
     return fuzzy.damerauLevenshtein(s, t) / (#s + #t)
 end
+
 
 return fuzzy
