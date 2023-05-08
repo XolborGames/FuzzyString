@@ -1,9 +1,11 @@
 {
-    "luau-lsp.types.roblox": false,
-    "luau-lsp.sourcemap.enabled": false,
+    "luau-lsp.types.roblox": true,
+    "luau-lsp.sourcemap.enabled": true,
 
     "files.exclude": {
-        ".vscode": true
+        ".vscode": true,
+
+        "sourcemap.json": true
     },
 
     "explorer.fileNesting.enabled": true,

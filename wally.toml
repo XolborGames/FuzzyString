@@ -18,10 +18,12 @@ exclude = [
     ".gitignore",
 
     "aftman.toml",
-    "selene.toml"
+    "selene.toml",
+
+    "sourcemap.json"
 ]
 include = [
-    "init.lua"
+    "src/"
 ]
 
 registry = "https://github.com/UpliftGames/wally-index"
